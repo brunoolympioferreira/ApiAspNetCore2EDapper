@@ -1,3 +1,4 @@
+using BaltaStore.Domain.StoreContext.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BaltaStore.Tests
@@ -8,6 +9,15 @@ namespace BaltaStore.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            var c = new Customer(
+                "Bruno",
+                "Ferreira",
+                "36523698752",
+                "bruno@gmail",
+                "119985632",
+                "Rua dos Patos,30");
+
+            var order = new Order(c);
         }
     }
 }
