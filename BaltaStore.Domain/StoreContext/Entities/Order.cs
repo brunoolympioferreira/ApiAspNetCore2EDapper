@@ -3,7 +3,6 @@ using FluentValidator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BaltaStore.Domain.StoreContext.Entities
 {
@@ -20,7 +19,7 @@ namespace BaltaStore.Domain.StoreContext.Entities
             _deliveries = new List<Delivery>();
         }
 
-        public Customer Customer { get;private set; }
+        public Customer Customer { get; private set; }
         public string Number { get; private set; }
         public DateTime CreateDate { get; private set; }
         public EOrderStatus Status { get; private set; }
@@ -47,7 +46,7 @@ namespace BaltaStore.Domain.StoreContext.Entities
 
         //Pagar um pedido
         public void Pay()
-        {  
+        {
             Status = EOrderStatus.Paid;
         }
         //Enviar um pedido
@@ -55,13 +54,13 @@ namespace BaltaStore.Domain.StoreContext.Entities
         {
             // A cada 5 produtos é uma entrega
             var deliveries = new List<Delivery>();
-            deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
+            //deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
             var count = 1;
 
             //Quebra as entregas
             foreach (var item in _items)
             {
-                if(count == 5)
+                if (count == 5)
                 {
                     count = 1;
                     deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
