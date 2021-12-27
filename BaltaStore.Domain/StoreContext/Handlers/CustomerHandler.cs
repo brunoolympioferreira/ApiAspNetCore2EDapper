@@ -1,5 +1,4 @@
-﻿using System;
-using BaltaStore.Domain.StoreContext.Commands.CustomerCommands.Inputs;
+﻿using BaltaStore.Domain.StoreContext.Commands.CustomerCommands.Inputs;
 using BaltaStore.Domain.StoreContext.Commands.OrderCommands.Outputs;
 using BaltaStore.Domain.StoreContext.CustomerCommands.Inputs;
 using BaltaStore.Domain.StoreContext.Entities;
@@ -43,14 +42,14 @@ namespace BaltaStore.Domain.StoreContext.Handlers
             // Criar a entidade
             var customer = new Customer(name, document, email, command.Phone);
 
-            // Va
-            AddNotifications(customer.Notifications);
+            //// Va
+            //AddNotifications(customer.Notifications);
 
-            if (Invalid)
-                return new CommandResult(
-                    false,
-                    "Por favor, corrija os campos abaixo",
-                    Notifications);
+            //if (Invalid)
+            //    return new CommandResult(
+            //        false,
+            //        "Por favor, corrija os campos abaixo",
+            //        Notifications);
 
             // Persistir o cliente
             _repository.Save(customer);
