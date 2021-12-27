@@ -1,10 +1,11 @@
-﻿using FluentValidator;
+﻿using BaltaStore.Shared.Entities;
+using FluentValidator;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace BaltaStore.Domain.StoreContext.Entities
 {
-    public class OrderItem : Notifiable
+    public class OrderItem : Entity
     {
         public OrderItem(Product product, decimal quantity)
         {
