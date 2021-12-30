@@ -45,11 +45,11 @@ namespace BaltaStore.Domain.StoreContext.Handlers
             //// Va
             //AddNotifications(customer.Notifications);
 
-            //if (Invalid)
-            //    return new CommandResult(
-            //        false,
-            //        "Por favor, corrija os campos abaixo",
-            //        Notifications);
+            if (Invalid)
+                return new CommandResult(
+                    false,
+                    "Por favor, corrija os campos abaixo",
+                    Notifications);
 
             // Persistir o cliente
             _repository.Save(customer);
